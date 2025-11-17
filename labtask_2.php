@@ -43,6 +43,7 @@
                 border-radius: 10px;
                 
             }
+            
             .remove_button {
                 background:red ;
                 padding: 15px;
@@ -108,9 +109,10 @@
             errordiv.innerHTML="phone must be a numeric"
             return;
         }
-        if(phone>14)
+        if(phone.length>14)
         {
             errordiv.innerHTML="phone number must be less";
+            return;
 
         }
         if(password!==conpass){
