@@ -6,7 +6,7 @@
                     font-family: 'Times New Roman', Times, serif;
                     padding: 10px;
                     background-color: white;
-                    color: cyan;
+                    color: black;
                     
                 }
             h2,h1{
@@ -57,7 +57,23 @@
     </head>
     <body>
         <h1>Participant Registration</h1>
-        
+    <div class="section_box">
+        <h3>Full Name:</h3>
+        <input type="text" id="name">
+        <h3>Full Email:</h3>
+        <input type="text" id="email">
+        <h3>phone Number:</h3>
+        <input type="text" id="phone">
+        <h3>password:</h3>
+        <input type="password" id="pass">
+        <h3>confirm password:</h3>
+        <input type="password" id="conpass"><br>
+        <button oneclick="register()">register</button>
+        <div id="error"></div>
+        <div id="output"></div>
+
+    </div>
+
         
 
 </html>
