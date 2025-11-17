@@ -68,12 +68,51 @@
         <input type="password" id="pass">
         <h3>confirm password:</h3>
         <input type="password" id="conpass"><br>
-        <button oneclick="register()">register</button>
+        <button onclick="register()">register</button>
         <div id="error"></div>
         <div id="output"></div>
 
     </div>
+    <h2>Activity Selection</h2>
+    <div class="section-box">
+        <input type ="text" id="activityname" placeholder="Activity name">
+        <button onclick="addactivity()">Add activity</button>
+    </div>
+    <script>
+    function handleSubmit()
+    {
+        var Fullname=document.getElementById("FullName").value.trim();
+        var email=document.getElementById("email").value.trim();
+        var phone=document.getElementById("phone").value.trim();
+        var password=document.getElementById("password").value.trim();
+        var errordiv=document.getElementById("error");
+        var outputdiv=document.getElementById("output");
+        if(Fullname===""||email===""||phone===""||password==="")
+        {
+            errordiv.innerHTML="Fill the form";
+            return false;
 
-        
+        }
+        if(isNaN(id))
+        {
+            errordiv.innerHTML="Id must be a numeric"
+            return false;
+        }
+        if(phone>14)
+        {
+            errordiv.innerHTML="phone number must be less";
 
+        }
+        outputdiv.innerHTML='
+        Fullname:${name}
+        email: ${email}
+        phone:${phone}
+        password:${password}
+        conpassword:${confirm password}
+        ';
+        return false;
+    }
+}
+</script>
+</body>
 </html>
