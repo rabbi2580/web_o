@@ -78,9 +78,10 @@
     <div class="section-box">
         <input type ="text" id="activityname" placeholder="Activity name">
         <button onclick="addactivity()">Add activity</button>
+        <div id="activitylist"></div>
     </div>
     <script>
-    function handleSubmit()
+    function register()
     {
         var Fullname=document.getElementById("name").value.trim();
         var email=document.getElementById("email").value.trim();
@@ -116,15 +117,39 @@
             errordiv.innerHTML="password must be same"
             return;
         }
-        outputdiv.innerHTML='
+        outputdiv.innerHTML=`
         <strong>Registration Successful</strong><br>
         Fullname:${Fullname}
         email: ${email}
         phone:${phone}
-        ';
+        `;
     }
+    function addactivity()
+    {
+        var activityname=document.getElementById("activityname").value.trim();
+        var activitylist=document.getElementById("activitylist");
+        if(activityname==="")
+            {
+                alert("please enter")
+                return;
+            }   
+        var div=document.getElement("div")
+        div.className="acticvity";
+        div.innerHTML=`
+        ${activityname}
+        <button class="remove_button"onclick="removeactivity(this)">Remove</button>
+        `;
+        activitylist.appendChild(div);
+        document.getElementById("activityname").value="";
+
     
-}
+    }
+    function removeactivity(button){
+        button.parentElement.remove();
+
+    }
+
+
 </script>
 </body>
 </html>
