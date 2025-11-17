@@ -26,6 +26,29 @@
 
             }
             button{
+                background-color: blue;
+                color: white;
+                cursor: pointer;
+            }
+            #error{
+                color: red;
+                text-align: center;
+                margin-top: auto;
+            }
+            .activity{
+                background:#e8e8e8 ;
+                padding: 15px;
+                margin-top: auto;
+                border-radius: 10px;
+                
+            }
+            .remove_button {
+                background:red ;
+                padding: 15px;
+                margin-top: auto;
+                border-radius: 10px;
+                cursor: pointer;
+
 
             }
             </body>
