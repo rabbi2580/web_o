@@ -29,6 +29,7 @@
                 background-color: blue;
                 color: white;
                 cursor: pointer;
+                border-radius: 5px;
             }
             #error{
                 color: red;
@@ -60,7 +61,7 @@
     <div class="section_box">
         <h3>Full Name:</h3>
         <input type="text" id="name">
-        <h3>Full Email:</h3>
+        <h3>Email:</h3>
         <input type="text" id="email">
         <h3>phone Number:</h3>
         <input type="text" id="phone">
@@ -68,7 +69,7 @@
         <input type="password" id="pass">
         <h3>confirm password:</h3>
         <input type="password" id="conpass"><br>
-        <button onclick="register()">register</button>
+        <button onclick="register()">Register</button>
         <div id="error"></div>
         <div id="output"></div>
 
@@ -81,37 +82,48 @@
     <script>
     function handleSubmit()
     {
-        var Fullname=document.getElementById("FullName").value.trim();
+        var Fullname=document.getElementById("name").value.trim();
         var email=document.getElementById("email").value.trim();
         var phone=document.getElementById("phone").value.trim();
-        var password=document.getElementById("password").value.trim();
+        var password=document.getElementById("pass").value.trim();
+        var conpass=document.getElementById("conpass").value.trim();
         var errordiv=document.getElementById("error");
         var outputdiv=document.getElementById("output");
-        if(Fullname===""||email===""||phone===""||password==="")
+        errordiv.innerHTML="";
+        outputdiv.innerHTML="";
+        if(Fullname===""||email===""||phone===""||password===""||conpass==="")
         {
             errordiv.innerHTML="Fill the form";
-            return false;
+            return;
 
         }
-        if(isNaN(id))
+        if(!email.includes("@"))
         {
-            errordiv.innerHTML="Id must be a numeric"
-            return false;
+            errordiv.innerHTML="invalid email"
+            return;
+        }
+        if(isNaN(phone))
+        {
+            errordiv.innerHTML="phone must be a numeric"
+            return;
         }
         if(phone>14)
         {
             errordiv.innerHTML="phone number must be less";
 
         }
+        if(password!==conpass){
+            errordiv.innerHTML="password must be same"
+            return;
+        }
         outputdiv.innerHTML='
-        Fullname:${name}
+        <strong>Registration Successful</strong><br>
+        Fullname:${Fullname}
         email: ${email}
         phone:${phone}
-        password:${password}
-        conpassword:${confirm password}
         ';
-        return false;
     }
+    
 }
 </script>
 </body>
