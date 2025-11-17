@@ -48,10 +48,16 @@
                 margin-top: auto;
                 border-radius: 10px;
                 cursor: pointer;
-
-
+                
             }
-            </body>
+            
+            </style>
+            
 
     </head>
+    <body>
+        <h1>Participant Registration</h1>
+        
+        
+
 </html>
